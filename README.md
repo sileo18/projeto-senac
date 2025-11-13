@@ -49,7 +49,7 @@ Antes de iniciar, é necessário ter instalado:
 
 5. **Acesse o sistema no navegador**
 
-    http://localhost/controle-alimentacao
+    http://localhost/Projeto01/controle-alimentacao
 
 
 | Nome                                 |     |
