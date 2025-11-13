@@ -58,5 +58,5 @@ Antes de iniciar, é necessário ter instalado:
 | **Yossi Holowka Gamito**             |  ✳️ |
 | **Bruno José Ferreira Pinto**        |  ✳️ |
 | **Bárbara Vitória Silva dos Santos** |  ✳️ |
-| **Lucas Antônio Toledo Sileo**       |  ✳️ |
+| **Lucas Antonio Toledo Sileo**       |  ✳️ |
 
