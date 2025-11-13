@@ -37,7 +37,7 @@ Antes de iniciar, é necessário ter instalado:
 
 1. **Clone o repositório**  
    ```bash
-   git clone https://github.com/seu-usuario/controle-alimentacao.git
+   git clone https://github.com/seu-usuario/projeto-senac.git
 
 2. **Mova o projeto para a pasta htdocs do XAMPP**
     ```bash
@@ -49,7 +49,7 @@ Antes de iniciar, é necessário ter instalado:
 
 5. **Acesse o sistema no navegador**
 
-    http://localhost/Projeto01/controle-alimentacao
+    http://localhost/Projeto01
 
 
 | Nome                                 |     |
