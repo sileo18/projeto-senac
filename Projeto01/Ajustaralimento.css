@@ -1,0 +1,358 @@
+/* ========================================================= */
+/* BL-OCO 1: DEFINIÇÃO DE   CORES  
+/* ========================================================= */
+:root {
+    --cor-primaria: #4CAF50; /* Verde principal (usado para bordas e cabeçalho) */
+    --cor-secundaria: #81C784; /* Verde mais claro (usado para o fundo dos menus) */
+    --cor-fundo-card: #E0E0E0; /* Cinza claro para o fundo do formulário de cadastro */
+    --cor-texto: #333; /* Cor padrão para a maioria dos textos (preto/cinza escuro) */
+    --cor-borda: #9E9E9E; /* Cinza suave para bordas arredondadas e inputs */
+    --cor-botao-salvar: #4285F4; /* Azul vibrante (Usado no Cadastro) */
+    --cor-botao-ajuste: #3f51b5; /* Azul Escuro para Salvar Ajustes */
+    --cor-botao-cancelar: #f44336; /* Vermelho para Cancelar */
+
+    /* NOVAS VARIÁVEIS PARA EXCLUSÃO E FEEDBACK */
+    --cor-alerta-bg: #fff3cd; /* Amarelo para background de aviso */
+    --cor-alerta-texto: #856404; /* Marrom escuro para texto de aviso */
+    --cor-deletar-sim: #dc3545; /* Vermelho forte para SIM */
+    --cor-deletar-nao: #6c757d; /* Cinza para NÃO */
+    --cor-sucesso-bg: #d4edda; /* Verde claro para sucesso */
+    --cor-sucesso-texto: #155724; /* Verde escuro para sucesso */
+}
+
+/* ========================================================= */
+/* BL-OCO 2: RESET BÁSICO E ESTILOS DO CORPO DA PÁGINA */
+/* ========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4; 
+    color: var(--cor-texto);
+}
+
+/* ========================================================= */
+/* BL-OCO 3: ESTILIZAÇÃO DO CABEÇALHO SUPERIOR   */
+/* ========================================================= */
+.header {
+    max-width: 600px; 
+    margin: 30px auto 20px auto; 
+    padding: 15px 20px;
+    background: linear-gradient(to bottom, var(--cor-primaria), var(--cor-secundaria)); 
+    border-radius: 25px; 
+    border: 5px solid var(--cor-primaria);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.header h1 {
+    color: white; 
+    font-size: 1.8em;
+    margin: 0;
+}
+
+.header .header-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* ========================================================= */
+/* BL-OCO 4: LAYOUT PRINCIPAL (CONTAINER E FLEXBOX) */
+/* ========================================================= */
+.container {
+    display: flex;
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px;
+}
+
+/* ========================================================= */
+/* BL-OCO 5: MENU LATERAL (SIDEBAR) */
+/* ========================================================= */
+.sidebar {
+    width: 250px; 
+    margin-right: 30px;
+}
+
+.menu-item {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: var(--cor-texto); 
+    background-color: var(--cor-secundaria); 
+    padding: 15px 10px;
+    margin-bottom: 15px;
+    border-radius: 30px; 
+    border: 2px solid var(--cor-primaria);
+    transition: background-color 0.3s, transform 0.1s; 
+    font-weight: bold;
+}
+
+.menu-item.active {
+    
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+}
+
+.menu-item:hover,
+.menu-item.active:hover {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+/* ========================================================= */
+/* BL-OCO 6: ÁREA DE CONTEÚDO E FORMULÁRIO   */
+/* ========================================================= */
+.content {
+    flex-grow: 1; 
+}
+
+.form-container {
+    background-color: var(--cor-fundo-card);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--cor-borda);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.form-info {
+    text-align: right;
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    flex-basis: 20%; 
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Inputs de texto e numéricos */
+.form-group input[type="text"],
+.form-group input[type="number"] {
+    flex-basis: 55%;
+    flex-grow: 1;
+    padding: 8px 10px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    outline: none;
+    text-align: left; 
+}
+
+/* Ajusta alinhamento do input  */
+.form-group input[type="number"] {
+    text-align: right; 
+}
+
+/* Remove setinhas do input   */
+.form-group input[type="number"]::-webkit-inner-spin-button,
+.form-group input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; 
+    margin: 0;
+}
+
+.form-group input:focus {
+    border-color: var(--cor-primaria);
+}
+
+/* ========================================================= */
+/* BL-OCO 7: ESTILOS ESPECÍFICOS DE AJUSTE (Botões Salvar/Cancelar) */
+/* ========================================================= */
+
+/* Título de Edição */
+.form-title-edit {
+    text-align: center;
+    color: var(--cor-primaria);  
+    font-size: 1.5em;
+    margin-bottom: 25px;
+}
+
+/* Botão principal (Salvar Ajustes - AZUL) */
+.btn-salvar-ajuste {
+    display: block;
+    width: 150px; 
+    margin: 30px 0 0 auto; 
+    padding: 10px 20px;
+    background-color: var(--cor-botao-ajuste);  
+    color: white;
+    border: none;
+    border-radius: 20px; 
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s;
+}
+
+.btn-salvar-ajuste:hover {
+    background-color: #303f9f;  
+}
+
+/* Container para centralizar o botão Cancelar */
+.cancel-container {
+    text-align: center;
+    margin-top: 20px; 
+}
+
+/* Botão secundário (Cancelar e Voltar  ) */
+.btn-cancelar {
+    display: inline-block;
+    background-color: var(--cor-botao-cancelar); /* Vermelho */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    
+     
+    border-radius: 25px; 
+    
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s;
+}
+
+.btn-cancelar:hover {
+    background-color: #d32f2f;
+}
+
+/* ========================================================= */
+/* BLOCO 8: ESTILOS PARA O BOTÃO E TELA DE DELETAR (ConfirmarDeletar.html) */
+/* ========================================================= */
+
+/* 8.1 Botão Deletar   */
+.btn-deletar {
+    background-color: var(--cor-botao-cancelar);  
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+    margin-top: 20px; 
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+.btn-deletar:hover {
+    background-color: #d32f2f;
+}
+
+/*   Layout da tela de Confirmação (ConfirmarDeletar.html) */
+.container-confirmacao {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.alerta-confirmacao {
+    background-color: var(--cor-alerta-bg);  
+    color: var(--cor-alerta-texto);
+    border: 1px solid var(--cor-alerta-bg);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    font-size: 1.1em;
+}
+
+.nome-item-deletar {
+    font-size: 1.4em;
+    color: var(--cor-texto);
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.botoes-confirmacao {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;  
+}
+
+.btn-confirmar-sim, .btn-confirmar-nao {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;  
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    flex: 1;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.btn-confirmar-sim {
+    background-color: var(--cor-deletar-sim);  
+    color: white;
+}
+
+.btn-confirmar-sim:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+.btn-confirmar-nao {
+    background-color: var(--cor-deletar-nao);  
+    color: white;
+}
+
+.btn-confirmar-nao:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+
+/* ========================================================= */
+/* BLOCO 9: ESTILOS PARA MENSAGENS DE FEEDBACK (alimentossalvos.php) */
+/* ========================================================= */
+
+.alerta-flutuante {
+    padding: 15px;
+    margin: 20px auto;  
+    max-width: 80%;  
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para sucesso (Verde) */
+.alert-success {
+    color: var(--cor-sucesso-texto); 
+    background-color: var(--cor-sucesso-bg); 
+    border-color: #c3e6cb; 
+}
+
+/* Estilo para ERRO (Vermelho) */
+.alert-error {
+    color: #721c24; 
+    background-color: #f8d7da; 
+    border-color: #f5c6cb; 
+}

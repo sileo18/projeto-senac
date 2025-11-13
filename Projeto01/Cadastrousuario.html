@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem de Calorias - Cadastro Usuário</title>
+    <link rel="stylesheet" href="Cadastrousuario.css">
+</head>
+<body>
+
+    <!-- ========================================================= -->
+    <!-- CABEÇALHO SUPERIOR -->
+    <!-- ========================================================= -->
+    <header class="header">
+        <img src="Images/alimentacao-saudavel (1).png" alt="Ícone de Cadastro de Alimentos" class="header-icon">
+        <h1>Bem-vindo</h1>
+    </header>
+
+    <!-- ========================================================= -->
+    <!-- CONTAINER PRINCIPAL: MENU LATERAL + CONTEÚDO -->
+    <!-- ========================================================= -->
+    <div class="container">
+
+        <!-- MENU LATERAL (Sidebar vem primeiro para ficar à esquerda no desktop) -->
+        <aside class="sidebar">
+            <nav>
+                <a href="Cadastrousuario.html" class="menu-item active">Cadastro Usuário</a>
+                <a href="CadastroAlimento.html" class="menu-item">Cadastrar Alimentos</a>
+                <a href="alimentossalvos.php" class="menu-item">Alimentos Cadastrados</a>
+                <a href="meta.php" class="menu-item">Meta</a>
+                <a href="Perfil.php" class="menu-item">Perfil</a>
+                <a href="Historicosemanal.php" class="menu-item">Histórico Semanal</a>
+            </nav>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL (FORMULÁRIO DE CADASTRO - Fica à direita no desktop) -->
+        <main class="content">
+            <div class="form-container">
+                <p class="form-instruction">Insira seus dados abaixo para iniciarmos.</p>
+
+                <form action="Usuario.php" method="POST">
+
+                    <div class="form-group">
+                        <label for="nome-usuario">Nome:</label>
+                        <input type="text" id="nome-usuario" name="nome-usuario" placeholder="Nome" required>
+                    </div>
+
+                    <div class="form-group-inline">
+                        <div class="form-sub-group">
+                            <label for="idade">Idade:</label>
+                            <input type="number" id="idade" name="idade" value="0" required>
+                        </div>
+
+                        <div class="form-sub-group">
+                            <label>Sexo:</label>
+                            <div class="radio-group">
+                                <input type="radio" id="masculino" name="sexo" value="masculino" checked>
+                                <label for="masculino">Masculino</label>
+                                <input type="radio" id="feminino" name="sexo" value="feminino">
+                                <label for="feminino">Feminino</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group-inline">
+                        <div class="form-sub-group">
+                            <label for="peso">Peso (kg - use vírgula, ex: 80,5):</label>
+                            <input type="text" id="peso" name="peso" required placeholder="Ex: 80,5">
+                        </div>
+
+                        <div class="form-sub-group">
+                            <label for="altura">Altura (m - use vírgula, ex: 1,90):</label>
+                            <input type="text" id="altura" name="altura" required placeholder="Ex: 1,90">
+                        </div>
+                    </div>
+
+                    <div class="form-group-frequencia">
+                        <label>Frequência de exercícios:</label>
+                        <div class="radio-group-vertical">
+                            <label><input type="radio" name="frequencia" value="sedentario" checked> Sedentário</label>
+                            <label><input type="radio" name="frequencia" value="pouco"> Pouco</label>
+                            <label><input type="radio" name="frequencia" value="moderado"> Moderado</label>
+                            <label><input type="radio" name="frequencia" value="intenso"> Intenso</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-calcular-meta">Cadastrar Usuário</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

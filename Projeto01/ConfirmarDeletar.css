@@ -1,0 +1,93 @@
+/* Container principal da mensagem de confirmação */
+.confirmation-box {
+    max-width: 500px;
+    margin: 100px auto; 
+    padding: 30px;
+    background-color: #ffebee;  
+    border: 2px solid var(--cor-botao-deletar); /* Usa a cor vermelha de deleção */
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Título principal do alerta */
+.confirmation-box h2 {
+    color: var(--cor-botao-deletar);
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+/* Destaque para o nome do alimento */
+.food-name-to-delete {
+    font-size: 1.5em;
+    color: var(--cor-botao-deletar) !important; 
+    font-weight: bold;
+    margin: 20px 0 40px 0 !important;
+    display: block; 
+    padding: 5px 10px;
+    background-color: #fce4e4;
+    border-radius: 5px;
+}
+
+/* Container dos botões */
+.confirmation-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Estilo do botão de Cancelar */
+.btn-cancelar {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    border: 1px solid var(--cor-primaria);
+}
+
+.btn-cancelar:hover {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+/* Estilo do botão de Confirmar */
+.btn-confirmar {
+    padding: 12px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    
+    background-color: var(--cor-botao-deletar);
+    border: none;
+    box-shadow: 0 3px 0 0 #A13830;
+}
+
+.btn-confirmar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 0 0 #A13830;
+}
+
+/* Responsividade básica */
+@media (max-width: 600px) {
+    .confirmation-box {
+        margin: 50px 10px;
+        padding: 20px;
+    }
+    .confirmation-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .btn-cancelar, .btn-confirmar {
+        width: 100%;
+        padding: 15px 10px;
+    }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem de Calorias - Ajustar Alimento</title>
+    <link rel="stylesheet" href="ajustaralimento.css">
+    
+    </head>
+<body>
+
+    <div class="header">
+        <img src="Images/alimentacao-saudavel (1).png" alt="Ícone de Ajuste de Alimentos" class="header-icon">
+        <h1>Ajustar Alimento</h1>
+    </div>
+
+    <div class="container">
+    <div class="container">
+    <aside class="sidebar">
+        <nav>
+            <a href="Cadastrousuario.html" class="menu-item">Cadastro Usuário</a>
+            <a href="CadastroAlimento.html" class="menu-item">Cadastrar Alimentos</a> 
+            <a href="alimentossalvos.php" class="menu-item">Alimentos Cadastrados</a>
+            <a href="meta.php" class="menu-item">Meta</a> 
+            
+            <a href="Perfil.php" class="menu-item active">Perfil</a>
+            
+            <a href="Historicosemanal.php" class="menu-item">Histórico semanal</a>
+        </nav>
+    </aside>
+
+        <main class="content">
+            <div class="form-container">
+                <h2 class="form-title-edit">Editando: VALOR_NOME_ATUAL</h2>
+
+                <p class="form-info">(Valores abaixo sempre referentes a 100 g)</p>
+
+                <form action="AjustarAlimento.php" method="POST">
+                    <input type="hidden" name="id" value="VALOR_ID_ATUAL">
+
+                    <div class="form-group">
+                        <label for="nome">Nome do Alimento:</label>
+                        <input type="text" id="nome" name="nome" value="VALOR_NOME_ATUAL" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calorias">Calorias (kcal):</label>
+                        <input type="number" step="0.01" id="calorias" name="calorias" value="VALOR_CALORIAS_ATUAL" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="carboidratos">Carboidratos (g):</label>
+                        <input type="number" step="0.01" id="carboidratos" name="carboidratos" value="VALOR_CARBO_ATUAL" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="proteina">Proteína (g):</label>
+                        <input type="number" step="0.01" id="proteina" name="proteina" value="VALOR_PROTEINA_ATUAL" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gordura">Gordura (g):</label>
+                        <input type="number" step="0.01" id="gordura" name="gordura" value="VALOR_GORDURA_ATUAL" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="acucar">Açúcar (g):</label>
+                        <input type="number" step="0.01" id="acucar" name="acucar" value="VALOR_ACUCAR_ATUAL" required>
+                    </div>
+
+                    <button type="submit" class="btn-salvar-ajuste">Salvar Ajustes</button>
+
+                    <div class="cancel-container">
+                        <a href="alimentossalvos.php" class="btn-cancelar">Cancelar e Voltar</a>
+                    </div>
+                </form>
+                
+                <div class="confirm-link-container">
+                    <a href="ConfirmarDelecao.php?id=VALOR_ID_ATUAL" class="btn-deletar">
+                        Deletar Alimento
+                    </a>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

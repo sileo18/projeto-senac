@@ -1,0 +1,153 @@
+/* ========================================================= */
+/* BL-OCO 1: DEFINIÇÃO DE  CORES   */
+/* ========================================================= */
+:root {
+    --cor-primaria: #4CAF50;  
+    --cor-secundaria: #81C784;  
+    --cor-fundo-card: #E0E0E0;  
+    --cor-texto: #333;  
+    --cor-borda: #9E9E9E; 
+}
+
+/* ========================================================= */
+/* BL-OCO 2: RESET BÁSICO E ESTILOS DO CORPO DA PÁGINA */
+/* ========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4; 
+    color: var(--cor-texto);
+    display: block; 
+}
+
+/* ========================================================= */
+/* BL-OCO 3: ESTILIZAÇÃO DO CABEÇALHO SUPERIOR (BANNER) */
+/* ========================================================= */
+.header {
+    max-width: 600px; 
+    
+    margin: 30px auto 15px auto; 
+    padding: 15px 20px;
+    background: linear-gradient(to bottom, var(--cor-primaria), var(--cor-secundaria)); 
+    border-radius: 25px; 
+    border: 5px solid var(--cor-primaria);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.header h1 {
+    color: white; 
+    font-size: 1.8em;
+    margin: 0;
+}
+
+.header .header-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* ========================================================= */
+/* BL-OCO 4/6: LAYOUT CENTRALIZADO DO MENU */
+/* ========================================================= */
+
+.container-central {
+     
+    width: 100%;
+    display: flex; 
+    justify-content: center; 
+    padding: 0 20px;
+     
+}
+
+.menu-card {
+     
+    background-color: var(--cor-fundo-card); 
+    padding: 30px 20px;
+    border-radius: 20px;
+    border: 1px solid var(--cor-borda);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); 
+    width: 100%;
+    max-width: 350px;  
+    
+     
+    margin-top: 0; 
+}
+
+.opcoes-iniciais {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;  
+}
+
+/* ========================================================= */
+/* BL-OCO 5: ESTILO DOS BOTÕES    
+/* ========================================================= */
+.menu-item-clean {
+    display: block;
+    text-decoration: none;
+    padding: 15px 25px;
+    
+    
+    background-color: var(--cor-secundaria); 
+  
+    color: var(--cor-texto); 
+    
+    
+    border: 2px solid var(--cor-primaria); 
+    
+    border-radius: 50px;  
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.1s, box-shadow 0.2s;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);  /
+}
+
+/* Efeito Hover: cor-primaria e texto BRANCO */
+.menu-item-clean:hover {
+    background-color: var(--cor-primaria); 
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ========================================================= */
+/* BL-OCO 8:  Responsividade*/
+/* ========================================================= */
+@media (max-width: 450px) {
+    .header {
+        margin: 20px auto 10px auto; /* Reduzida a margem para telas pequenas */
+        max-width: 90%;
+        padding: 10px 15px;
+        gap: 10px;
+    }
+    .header h1 {
+        font-size: 1.5em;
+    }
+    .header .header-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .menu-card {
+        padding: 20px 15px;
+        max-width: 90%;
+    }
+    .opcoes-iniciais {
+        gap: 10px;
+    }
+    .menu-item-clean {
+        padding: 12px 15px;
+        font-size: 1em;
+    }
+}

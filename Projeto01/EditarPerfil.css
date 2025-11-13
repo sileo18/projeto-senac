@@ -1,0 +1,274 @@
+/* ========================================================= */
+/* BL-OCO 1: DEFINIÇÃO DE  CORES  */
+/* ========================================================= */
+:root {
+    --cor-primaria: #4CAF50;  
+    --cor-secundaria: #81C784;  
+    --cor-fundo-card: #E0E0E0; 
+    --cor-texto: #333;  
+    --cor-borda: #9E9E9E; 
+    --cor-botao-salvar: #4285F4;  
+    --cor-fundo-app: #f4f4f4;  
+}
+
+/* ========================================================= */
+/* BL-OCO 2: RESET BÁSICO   */
+/* ========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--cor-fundo-app); 
+    color: var(--cor-texto);
+}
+
+/* ========================================================= */
+/* BL-OCO 3: ESTILIZAÇÃO DO CABEÇALHO SUPERIOR */
+/* ========================================================= */
+.header {
+    max-width: 600px; 
+    margin: 30px auto 20px auto; 
+    padding: 15px 20px;
+    background: linear-gradient(to bottom, var(--cor-primaria), var(--cor-secundaria)); 
+    border-radius: 25px; 
+    border: 5px solid var(--cor-primaria);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.header h1 {
+    color: white; 
+    font-size: 1.8em;
+    margin: 0;
+}
+
+.header .header-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* ========================================================= */
+/* BL-OCO 4: LAYOUT PRINCIPAL (CONTAINER E FLEXBOX) */
+/* ========================================================= */
+.container {
+    display: flex;
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px;
+}
+
+/* ========================================================= */
+/* BL-OCO 5: MENU LATERAL (SIDEBAR) */
+/* ========================================================= */
+.sidebar {
+    width: 250px; 
+    margin-right: 30px;
+}
+
+.menu-item {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: var(--cor-texto); 
+    background-color: var(--cor-secundaria); 
+    padding: 15px 10px;
+    margin-bottom: 15px;
+    border-radius: 30px; 
+    border: 2px solid var(--cor-primaria);
+    transition: background-color 0.3s, transform 0.1s; 
+    font-weight: bold;
+}
+
+.menu-item.active {
+    background-color: var(--cor-primaria); /* Cor principal quando ativo */
+    color: white;
+}
+
+.menu-item:hover {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+/* ========================================================= */
+/* BL-OCO 6: ÁREA DE CONTEÚDO GERAL E CARD (content, form-card) */
+/* ========================================================= */
+.content {
+    flex-grow: 1; 
+}
+
+/* Card para visualização do perfil e formulário de edição */
+.perfil-container, .form-card {
+    background-color: var(--cor-fundo-card); /* Usando a variável definida acima */
+    padding: 30px;
+    border-radius: 15px;
+    border: 3px solid var(--cor-primaria);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+}
+
+/* Estilização dos dados exibidos na página Perfil.php */
+.dados-pessoais p {
+    font-size: 1.1em;
+    padding: 10px 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+.dados-pessoais p:last-of-type {
+    border-bottom: none;
+    margin-bottom: 25px;
+}
+.dados-pessoais strong {
+    display: inline-block;
+    width: 200px;
+}
+
+/* ========================================================= */
+/* BL-OCO 7: ESTILOS DO FORMULÁRIO (HERDADOS) */
+/* ========================================================= */
+.form-group {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    flex-basis: 35%; /* Ajustado para melhor alinhamento */
+    font-weight: bold;
+    text-align: left;
+}
+
+.form-group input, 
+.form-group select { /* Incluído SELECT para a edição */
+    flex-basis: 55%;
+    flex-grow: 1;
+    padding: 10px 12px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    outline: none;
+    text-align: left; 
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--cor-primaria);
+}
+
+/* ========================================================= */
+/* BL-OCO 8: BOTÕES DE AÇÃO E FEEDBACK (NOVO) */
+/* ========================================================= */
+
+ 
+.form-actions {
+    display: flex;
+    justify-content: flex-end;  
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Botão Principal: Salvar Alterações (EditarPerfil.php) */
+.btn-primary {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--cor-botao-salvar); 
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s, transform 0.1s;
+}
+.btn-primary:hover {
+    background-color: #3b74d6;
+    transform: translateY(-1px);
+}
+
+
+/* Botão Secundário: Cancelar (EditarPerfil.php) */
+.btn-secondary {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #f44336;  
+    color: white;  
+    text-decoration: none;
+    border: none;  
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s;
+    text-align: center;
+}
+.btn-secondary:hover {
+    background-color: #d32f2f;  
+}
+
+
+/* Botões na página de visualização (Perfil.php) */
+.dados-pessoais .btn-editar {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #FFC107; /* Amarelo/Laranja para Edição */
+    color: var(--cor-texto);
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    margin-right: 15px;
+    transition: background-color 0.2s;
+}
+.dados-pessoais .btn-editar:hover {
+    background-color: #ff9800;
+}
+
+.dados-pessoais .btn-deletar {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #f44336;  
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+.dados-pessoais .btn-deletar:hover {
+    background-color: #d32f2f;
+}
+
+/* ALERTAS DE FEEDBACK */
+.alerta-flutuante {
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.alert-success {
+    background-color: #e8f5e9;  
+    border: 1px solid #4CAF50;  
+    color: #2e7d32;  
+}
+
+.alert-error {
+    background-color: #ffebee;  
+    border: 1px solid #f44336;  
+    color: #d32f2f;  
+}

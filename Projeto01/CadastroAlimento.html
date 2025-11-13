@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem de Calorias - Cadastrar Alimentos</title>
+    <link rel="stylesheet" href="CadastroAlimento.css">
+</head>
+<body>
+
+    <div class="header">
+        <img src="Images/alimentacao-saudavel (1).png" alt="Ícone de Cadastro de Alimentos" class="header-icon">
+        <h1>Cadastrar Alimentos</h1>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <nav>
+                <a href="Cadastrousuario.html" class="menu-item">Cadastro Usuário</a>
+                
+                <a href="CadastroAlimento.html" class="menu-item active">Cadastrar Alimentos</a> 
+                
+                <a href="alimentossalvos.php" class="menu-item" target="_self">Alimentos Cadastrados</a>
+                
+                <a href="meta.php" class="menu-item">Meta</a> 
+                
+                <a href="Perfil.php" class="menu-item">Perfil</a>
+                
+                <a href="Historicosemanal.php" class="menu-item">Histórico semanal</a>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <div class="form-container">
+                <p class="form-info">(Valores abaixo sempre referentes a 100 g)</p>
+
+                <form action="Alimentoscadastro.php" method="POST">
+                    <div class="form-group">
+                        <label for="nome">Cadastrar Alimento:</label>
+                        <input type="text" id="nome" name="nome" placeholder="Nome" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calorias">Calorias (kcal):</label>
+                        <input type="number" step="0.01" id="calorias" name="calorias" value="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="carboidratos">Carboidratos (g):</label>
+                        <input type="number" step="0.01" id="carboidratos" name="carboidratos" value="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="proteina">Proteína (g):</label>
+                        <input type="number" step="0.01" id="proteina" name="proteina" value="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gordura">Gordura (g):</label>
+                        <input type="number" step="0.01" id="gordura" name="gordura" value="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="acucar">Açúcar (g):</label>
+                        <input type="number" step="0.01" id="acucar" name="acucar" value="0" required>
+                    </div>
+
+                    <button type="submit" class="btn-salvar">Salvar</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
